@@ -1,0 +1,19 @@
+{
+  "name": "snarl-bot",
+  "version": "0.1.0",
+  "description": "A carl-bot ripoff.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nah",
+    "start": "node index.js",
+    "register": "node register.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.0",
+    "discord-api-types": "^0.36.2",
+    "discord.js": "^14.0.3",
+    "request": "^2.88.2"
+  }
+}
