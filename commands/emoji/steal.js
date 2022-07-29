@@ -58,5 +58,6 @@ module.exports = {
 						interaction.reply("no");
 				}
 			});
+		return true;
 	},
 };

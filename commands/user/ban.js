@@ -60,7 +60,7 @@ module.exports = {
 				let msg;
 				switch (e.rawError.message) {
 					case "Missing Permissions": 
-						msg = 'Missing permimssions... Do I have the "Ban Members" permission?';
+						msg = 'Missing permissions... Do I have the "Ban Members" permission?';
 						break;
 					default:
 						msg = "no";
@@ -78,5 +78,6 @@ module.exports = {
 					]
 				});
 			});
+		return true;
 	},
 };
