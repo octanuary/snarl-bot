@@ -1,13 +1,15 @@
-const steal = require("./emoji/steal");
-const coinflip = require("./fun/coinflip");
-const ban = require("./user/ban");
-const unban = require("./user/unban");
-const ping = require("./utils/ping");
+const emojiSteal = require("./emoji/steal");
+const funCoinFlip = require("./fun/coinflip");
+const userBan = require("./user/ban");
+const userInfo = require("./user/info");
+const userUnban = require("./user/unban");
+const utilsPing = require("./utils/ping");
 
 module.exports = [
-	steal,
-	coinflip,
-	ban,
-	unban,
-	ping,
+	emojiSteal,
+	funCoinFlip,
+	userBan,
+	userInfo,
+	userUnban,
+	utilsPing,
 ];
