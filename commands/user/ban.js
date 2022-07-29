@@ -40,8 +40,8 @@ module.exports = {
 		const deleteMessageDays = interaction.options.getInteger("delete_messages");
 
 		interaction.guild.members.ban(user.value, { reason, deleteMessageDays })
-			.then(banInfo => {
-				console.log(`Banned ${banInfo.user?.tag ?? banInfo.tag ?? banInfo} from ${user.member.guild.name}`);
+			.then((banInfo) => {
+				console.log(`Banned ${banInfo.user?.tag ?? banInfo.tag ?? banInfo} from ${interaction.guild.name}`);
 				interaction.reply({
 					embeds: [
 						(new EmbedBuilder()
