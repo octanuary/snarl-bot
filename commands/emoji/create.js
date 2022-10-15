@@ -3,8 +3,8 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 module.exports = {
 	register() {
 		return new SlashCommandBuilder()
-			.setName("emoji_steal")
-			.setDescription("Steals an emoji from another server.")
+			.setName("emoji_create")
+			.setDescription("Creates an emoji.")
 			// emoji/id
 			.addStringOption((option) =>
 				option.setName("emoji")
@@ -23,7 +23,7 @@ module.exports = {
 	 */
 	async command(interaction) {
 		if (
-			interaction.commandName !== "emoji_steal" ||
+			interaction.commandName !== "steal" ||
 			!interaction.isChatInputCommand()
 		) return;
 
@@ -38,6 +38,14 @@ module.exports = {
 		} else if (/$(\d)+^/.test(emoji.value)) {
 			id = emoji.value;
 			url = `https://cdn.discordapp.com/emojis/${id}.${anim ? "gif" : "png"}?size=2048&quality=lossless`;
+		} else {
+			try {
+				new URL(emoji.value);
+				url = emoji.value;
+			} catch (e) {
+				interaction.reply("`emoji` option must be an emoji or emoji ID.");
+				return;
+			}
 		}
 
 		interaction.guild.emojis.create({ attachment: url, name })
